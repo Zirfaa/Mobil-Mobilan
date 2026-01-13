@@ -21,8 +21,8 @@ public class BonusScript : MonoBehaviour
       if (obj.gameObject.CompareTag("Bonus"))
       {
          Debug.Log("NABRAK BONUS");
-
          Destroy(obj.gameObject);
+         FindObjectOfType<SpawnManagers>().BonusTaken();
       }
    }
 }
