@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class SpawnManagers : MonoBehaviour
 {
-    [SerializeField]public GameObject bonusPrefab;
-    public Transform[] spawnPoints;
+    [SerializeField]private GameObject bonusPrefab;
+    private Transform[] spawnPoints;
 
     GameObject currentBonus;
 
@@ -13,12 +13,11 @@ public class SpawnManagers : MonoBehaviour
         SpawnBonus();
     }
 
-    public void SpawnBonus()
+    private void SpawnBonus()
     {
         int index = Random.Range(1, spawnPoints.Length);
 
-        currentBonus = Instantiate(
-            bonusPrefab, spawnPoints[index].position, Quaternion.identity
+        currentBonus = Instantiate(bonusPrefab, spawnPoints[index].position, Quaternion.identity
         );
     }
 
